@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lartimes.weather.mapper.DailyWeatherMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lartimes.weather.model.po.DailyWeather">
+        <id column="id" property="id" />
+        <result column="day" property="day" />
+        <result column="highest_tem" property="highestTem" />
+        <result column="lowest_tem" property="lowestTem" />
+        <result column="weather_conditions" property="weatherConditions" />
+        <result column="wind_info" property="windInfo" />
+        <result column="position" property="position" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, day, highest_tem, lowest_tem, weather_conditions, wind_info, position
+    </sql>
+
+</mapper>

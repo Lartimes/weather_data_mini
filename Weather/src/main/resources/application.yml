@@ -1,0 +1,39 @@
+hadoop:
+  hdfs:
+    hostname: hadoop2
+    port: 8020
+    username: root
+    transfer:
+      dest: hadoop2
+      table: daily_weather_hdfs
+      columns:
+          - day
+          - highest_tem
+          - id
+          - lowest_tem
+          - position
+          - weather_conditions
+          - wind_info
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd
+  main:
+    allow-circular-references: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.167.121:3306/weather?useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&useLegacyDatetimeCode=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 307314
+server:
+  servlet:
+    context-path: /weather
+  port: 8000
+springdoc:
+  api-docs:
+    path: /api-docs
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:com/lartimes/hotel/mapper/*.xml
+#    http://localhost:8000/weather/swagger-ui/index.html#/
